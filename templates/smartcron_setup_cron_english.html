@@ -1,0 +1,43 @@
+<h1>Introduction</h1>
+In order for SmartCron to work, there are a few steps you need to make. First, let's understand what the module does. <br />
+<br />
+The module allows you to create different jobs. Each job has a "type", which is a plugin file decsribing to the module what it needs to do when the job is executed. Currently, the module has a limited amount of job types but we are confident the community's developer will find this module usefull and will create more job types !<br />
+<br />
+So, once jobs have been created, you need to setup a cron job on your server. This cron job will execute a script of the module which will then execute the jobs that need to be executed. So you only need to create 1 cron, and the module will t ake care of everything else !<br />
+
+<h1>Setting up the cron job</h1>
+
+Cron jobs can be created with different methods. Here is the method for CPanel.<br />
+<ul>
+	<li>Log in to your CPanel</li>
+	<li>Click on the <b>Cron Jobs</b> link</li>
+	<li>Click on the <b>Standard</b> button</li>
+	<li>In the <b>Command to run</b> text box, enter the following line :</li>
+	<div style="padding-left:15px; padding-bottom: 3px;"><textarea cols="100" readonly="readonly"><{$cronjob}></textarea></div>
+	<li>In the <b>Minute(s)</b> select box, select <b>Every Minute</b></li>
+	<li>In the <b>Hours(s)</b> select box, select <b>Every Hour</b></li>
+	<li>In the <b>Day(s)(s)</b> select box, select <b>Every Day</b></li>
+	<li>In the <b>Month(s)</b> select box, select <b>Every Month</b></li>
+	<li>In the <b>Weekday(s)</b> select box, select <b>Every Weekday</b></li>
+	<li>Hit he <b>Save Crontab</b> button</li>
+</ul>
+<br />
+Have a look at the following screenshot :<br />
+<br />
+<div style="text-align: center;"><img src="<{$xoops_url}>/modules/smartcron/images/setupcron.jpg" alt="Setup cron job" /></div>
+
+<h1>Module permissions</h1>
+
+Since the cron job will execute a file of the module while not loged in, Anonymous users need to have the permissions to access the module.<br />
+<br />
+<ul>
+	<li>Go on System Admin > Groups > Anonymous > Edit</li>
+	<li>Under the <b>Module Access rights</b>, check the box <b>SmartCron</b></li>
+	<li>Click on the <b>Update Group</b> button</li>
+</ul>
+
+<h1>Authorised IP</h1>
+
+Since anonymous users have permission to access the module, we need to control how the _execute.php script is executed. In order to acheive that, the module controls the IP adress who are accessing this page.<br />
+<br />
+In the module's preferences, the config <b>IPs allowed to execute the cron jobs</b> needs to be set to the IP of the server which will be authorized to execute the cron job. Please set this preference to your server's IP addres.
