@@ -1,10 +1,3 @@
-/**
-* $Id: readme.txt,v 1.1 2007/06/05 18:28:18 marcan Exp $
-* Module: SmartCron
-* Author: The SmartFactory <www.smartfactory.ca>
-* Licence: GNU
-*/
-
 What is SmartCron ?
 ======================
 
